@@ -1,0 +1,43 @@
+# PTReport 配置文件
+# 渗透测试报告生成器配置
+
+# 作者信息
+author: "网络安全工程师"
+version: "v1.0"
+
+# 测试范围默认
+scope: "全端口"
+
+# 常用测试工具
+tools:
+  - "Nmap"
+  - "Burp Suite"
+  - "sqlmap"
+  - "dirb"
+  - "ffuf"
+  - "Nikto"
+  - "Hydra"
+  - "Metasploit"
+
+# 默认结论
+conclusion: |
+  本次渗透测试发现了若干安全漏洞，建议按照修复建议尽快处理。
+  高危漏洞需要优先修复，修复完成后建议进行复测验证。
+
+# 报告输出设置
+report:
+  output_dir: "output"
+  filename_prefix: "渗透测试报告"
+  auto_open: false
+
+# 漏洞模板设置
+vulnerabilities:
+  show_cvss: true
+  show_reference: true
+  default_severity: "中危"
+
+# 格式设置
+format:
+  date_format: "%Y-%m-%d"
+  datetime_format: "%Y-%m-%d %H:%M:%S"
+  language: "zh-CN"
