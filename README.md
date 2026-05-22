@@ -1,10 +1,8 @@
-# PTReport
-Penetration Testing Report Generator
 Title:
 
 
 v2.1 - PTReport | Penetration Test Report Generator
-Release Note:
+Description:
 
 
 ## PTReport v2.1
@@ -15,7 +13,7 @@ Penetration Testing Report Generator - Simple, Fast, Bilingual (Chinese/English)
 
 ### Features
 - 5 Report Templates: Standard, Executive, Security Checklist, CTF Writeup, Full
-- Bilingual Interface: Chinese / English (`--lang en`)
+- Bilingual Interface: Chinese / English switch
 - PDF Export via pandoc
 - No database required - single Python script
 
@@ -23,51 +21,58 @@ Penetration Testing Report Generator - Simple, Fast, Bilingual (Chinese/English)
 
 ### Quick Start
 
-**1. Install**
+**1. Install dependencies**
 ```bash
-pip install -r requirements.txt
-# or just: pip install jinja2
-2. Run
+pip install jinja2
+2. Run the program
 
 
 python ptr.py
-3. Select Options
+3. Follow the prompts
 
 Enter project name, target, scope
-Choose report template (1-5)
-For English: type en when asked for language
+Select report template (1-5)
+Select language (cn/en)
 4. Output
 
-Generated report saved to output/ folder as .md file
+Report saved to output/ folder as .md file
+Commands
+Command	Description
+python ptr.py	Start program (default Chinese)
+python ptr.py --lang en	Start in English mode
+Interactive Options:
+
+1 - Standard template
+2 - Executive summary
+3 - Security checklist
+4 - CTF writeup
+5 - Full report
 Report Templates
 #	Template	Use Case
 1	Standard	General penetration test
-2	Executive	Management summary / overview
-3	Security Checklist	Compliance checklist
+2	Executive	Management summary
+3	Security Checklist	Compliance audit
 4	CTF Writeup	CTF competition writeup
-5	Full	Complete report with all sections
+5	Full	Complete all-in-one report
 PDF Export
-Install pandoc first:
+Install pandoc:
 
 Windows: winget install pandoc
-Linux/Mac: sudo apt install pandoc
-Then export from menu when prompted.
+Linux: sudo apt install pandoc
+Mac: brew install pandoc
+Export: When prompted in program, select PDF export option.
 
 Project Structure
 
 PTReport/
 ├── ptr.py              # Main program
 ├── report_builder.py   # Template engine
-├── scanner.py          # Scan tools
+├── scanner.py          # Scan tools integration
 ├── i18n.py             # Language support
-├── README.md           # Documentation
+├── README.md           # Full documentation
 └── CHANGELOG.md        # Version history
-System Requirements
+Requirements
 Python 3.6+
 jinja2
-pandoc (optional, for PDF export)
 License
 MIT License
-
-Contributing
-Issues and pull requests welcome!
